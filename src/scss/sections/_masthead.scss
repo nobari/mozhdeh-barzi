@@ -1,0 +1,56 @@
+//
+// Masthead
+//
+
+.masthead {
+  padding-top: calc(6rem + 74px);
+  padding-bottom: 6rem;
+
+  .masthead-heading {
+    font-size: 2.75rem;
+    line-height: 2.75rem;
+  }
+
+  .masthead-subheading {
+    font-size: 1.25rem;
+  }
+  .header-torch {
+    height: calc(100% - 200px);
+    position: relative;
+    .header-torch-back {
+      background-image: url('/assets/img/header/back.jpg');
+      height: 100%;
+      background-size: cover;
+      #torch {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.avatar-div {
+  margin: auto;
+  padding: 10px 4px;
+  text-align: center;
+  img {
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .masthead {
+    padding-top: calc(6rem + 104px);
+    padding-bottom: 6rem;
+
+    .masthead-heading {
+      font-size: 4rem;
+      line-height: 3.5rem;
+    }
+
+    .masthead-subheading {
+      font-size: 1.5rem;
+    }
+  }
+}

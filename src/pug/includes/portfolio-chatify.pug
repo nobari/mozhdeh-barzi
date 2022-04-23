@@ -1,0 +1,29 @@
+#chatifyModal.portfolio-modal.modal.fade(tabindex='-1', aria-labelledby='chatifyModal', aria-hidden='true')
+    .modal-dialog.modal-xl
+        .modal-content
+            .modal-header.border-0
+                button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+            .modal-body.text-center.pb-5
+                .container
+                    .row.justify-content-center
+                        .col-lg-8
+                            // Portfolio Modal - Title
+                            h2.portfolio-modal-title.text-secondary.text-uppercase.mb-0 Chatify
+                            // Icon Divider
+                            .divider-custom
+                                .divider-custom-line
+                                .divider-custom-icon
+                                    i.fas.fa-star
+                                .divider-custom-line
+                            // Portfolio Modal - Image
+                            - var srcs = 1;
+                            while srcs <= 23
+                                img.img-fluid.rounded.mb-5(src='assets/img/portfolio/chatify/'+(srcs++)+'.png', alt='chatify-case-'+srcs)
+                            // Portfolio Modal - Text
+                            p.mb-4
+                                | Chatify: Conversational E-Commerce.
+                            a.btn.btn-primary(href='https://chatify.hypermyper.com' target='__blank')
+                                | Site
+                            button.btn.btn-secondary(data-bs-dismiss='modal')
+                                i.fas.fa-xmark.fa-fw
+                                | Close Window
