@@ -9,10 +9,11 @@ window.addEventListener('DOMContentLoaded', event => {
 
         const torch = document.body.querySelector("#torch");
         if (torch) {
-            const maxTop = (torch.offsetTop + torch.clientHeight - document.scrollingElement.scrollTop - 50) / (torch.offsetTop + torch.clientHeight);
+            const maxTop = (torch.offsetTop + torch.clientHeight - document.scrollingElement.scrollTop) / (torch.offsetTop + torch.clientHeight);
             if (maxTop > 0) {
                 // console.log("scroll:", maxTop, this.state);
-                const newImg = `assets/img/header/${Math.trunc((1 - maxTop) * 10)}.png`;
+                const num = Math.ceil((1 - maxTop) * 10);
+                const newImg = `assets/img/header/${num > 9 ? 9 : num}.png`;
                 torch.src = newImg;
             }
         }

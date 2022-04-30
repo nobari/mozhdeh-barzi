@@ -31,41 +31,38 @@ html(lang='en')
     body#page-top
 
         // Navigation
-        nav#mainNav.navbar.navbar-expand-lg.bg-secondary.text-uppercase.fixed-top
+        nav#mainNav.navbar.navbar-expand.bg-primary.fixed-top
             .container
-                a.navbar-brand(href='#page-top') Mozhdeh Barzi
+                a.navbar-brand(href='#page-top') Experience Designer
                 button.navbar-toggler.text-uppercase.font-weight-bold.bg-primary.text-white.rounded(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
                     | Menu 
                     i.fas.fa-bars
                 #navbarResponsive.collapse.navbar-collapse
                     ul.navbar-nav.ms-auto
-                        li.nav-item.mx-0.mx-lg-1
-                            a.nav-link.py-3.px-0.px-lg-3.rounded(href='#portfolio') Portfolio
-                        li.nav-item.mx-0.mx-lg-1
-                            a.nav-link.py-3.px-0.px-lg-3.rounded(href='#about') About
+                        li.nav-item.mx-1
+                            a.nav-link.rounded(href='#portfolio') Work
+                        li.nav-item.mx-1
+                            a.nav-link.rounded(href='#about') About
 
         // Masthead
         header.masthead.bg-primary.text-white.text-center
-            .container.d-flex.align-items-center.flex-column
+            .head-container
                 .header-torch 
                     .header-torch-back 
-                        img#torch(src='assets/img/header/0.png',alt='')
-                // Masthead Heading
-                h1.masthead-heading.text-uppercase.mb-0 Mozhdeh Barzi
-                // Icon Divider
-                .divider-custom.divider-light
-                    .divider-custom-line
-                    .divider-custom-icon
-                        i.fas.fa-star
-                    .divider-custom-line
-                // Masthead Subheading
-                p.masthead-subheading.font-weight-light.mb-0 Graphic Artist - Web Designer - Illustrator
+                        img#torch(src='assets/img/header/0.png',alt='Mozhdeh Light')
+                .header-text-container
+                    .header-text
+                        // Masthead Heading
+                        h1.masthead-heading
+                            | 👋 Hello, I'm 
+                            a(href='assets/MozhdehBarziCV.pdf' target='__blank') Mozhdeh Barzi
+                        p.masthead-subheading I find the solution that lies in the problem
 
         // Portfolio Section
         section#portfolio.page-section.portfolio
             .container
                 // Portfolio Section Heading
-                h2.page-section-heading.text-center.text-uppercase.text-secondary.mb-0 Portfolio
+                h2.page-section-heading.text-center.text-secondary.mb-0 Work
                 // Icon Divider
                 .divider-custom
                     .divider-custom-line
@@ -75,7 +72,7 @@ html(lang='en')
                 // Portfolio Grid Items
                 .row.justify-content-center
                     each portfolio in ["chatify","shootshot"]
-                        .col-md-6.col-lg-4.mb-5
+                        .col-md-6.mb-5
                             .portfolio-item.mx-auto(data-bs-toggle='modal', data-bs-target='#'+portfolio+'Modal')
                                 .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
                                     .portfolio-item-caption-content.text-center.text-white
@@ -83,12 +80,12 @@ html(lang='en')
                                 img.img-fluid(src='assets/img/portfolio/'+portfolio+'/cover.png', alt=portfolio+'-cover')
 
         // About Section
-        section#about.page-section.bg-primary.text-white.mb-0
+        section#about.page-section
             .container
                 // About Section Heading
-                h2.page-section-heading.text-center.text-uppercase.text-white About
+                h2.page-section-heading.text-center.text-secondary.mb-0 About
                 // Icon Divider
-                .divider-custom.divider-light
+                .divider-custom
                     .divider-custom-line
                     .divider-custom-icon
                         i.fas.fa-star
@@ -102,7 +99,10 @@ html(lang='en')
                             | My journey to UX design has not been the most straightforward, but it has been fulfilling.
                             br
                             br
-                            | Being an empathetic and active listener helped me to find a comprehensive yet agile approach to solve real life challenges/problems, which led me to UX design field.
+                            | After receiving my Master's in 2012, when I moved to Singapore, I got familiar with the UX design field. Soon after, I received an innovation award for the mobile app concept that I've designed for the Institute of Innovations & Entrepreneurship of SMU.
+                            br
+                            br
+                            | Being an empathetic and active listener helped me to find a comprehensive yet agile approach to solve real life challenges/problems, which led me to become a Product Designer and create better experiences for people.
                     .col-lg-4.me-auto
                         p.lead
                             | +5 years experience as a UX generalist focusing on human-centered design process to produce a user-focused MVP.
@@ -114,11 +114,11 @@ html(lang='en')
                             | Founding member of the ShootShot mobile app which was designed and developed based on a patented algorithm to eliminate friendliness bias in communications.
                 // About Section Button
                 .text-center.mt-4
-                    a.btn.btn-xl.btn-outline-light(href='assets/MozhdehBarziCV.pdf' target='__blank')
+                    a.btn.btn-xl.btn-outline-dark(href='assets/MozhdehBarziCV.pdf' target='__blank')
                         i.fas.fa-download.me-2
                         | CV/Resume
         // Footer
-        footer.footer.text-center
+        footer.footer.text-center.bg-primary
             .container
                 .row
                     // Footer Location
@@ -139,7 +139,7 @@ html(lang='en')
                             i.fab.fa-fw.fa-instagram
 
         // Copyright Section
-        div.copyright.py-4.text-center.text-white
+        div.copyright.bg-primary.py-4.text-center.text-white
             .container
                 small Copyright &copy; Mozhdeh Barzi 2022
 

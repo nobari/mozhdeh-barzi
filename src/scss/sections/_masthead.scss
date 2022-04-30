@@ -3,19 +3,40 @@
 //
 
 .masthead {
-  padding-top: calc(6rem + 74px);
-  padding-bottom: 6rem;
-
-  .masthead-heading {
-    font-size: 2.75rem;
-    line-height: 2.75rem;
+  // padding-top: calc(6rem + 74px);
+  // padding-bottom: 6rem;
+  .head-container {
+    height: 100vh;
   }
 
-  .masthead-subheading {
-    font-size: 1.25rem;
+  .header-text-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    min-width: 300px;
+    max-width: 40%;
+    display: flex;
+    .header-text {
+      margin: auto auto 10px;
+      padding-left: 20px;
+      text-align: left;
+      .masthead-heading {
+        color: var(--bs-yellow);
+        font-size: 1rem;
+        font-weight: normal;
+        a {
+          color: inherit;
+          text-underline-offset: 2px;
+        }
+      }
+      .masthead-subheading {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
   }
   .header-torch {
-    height: calc(100% - 200px);
+    height: 100%;
     position: relative;
     .header-torch-back {
       background-image: url('/assets/img/header/back.jpg');
@@ -24,6 +45,7 @@
       #torch {
         height: 100%;
         width: 100%;
+        object-fit: cover;
       }
     }
   }
@@ -31,7 +53,7 @@
 
 .avatar-div {
   margin: auto;
-  padding: 10px 4px;
+  padding: 2rem 1rem 3rem;
   text-align: center;
   img {
     border-radius: 50%;
@@ -39,18 +61,15 @@
     height: 15rem;
   }
 }
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(sm) {
   .masthead {
-    padding-top: calc(6rem + 104px);
-    padding-bottom: 6rem;
-
-    .masthead-heading {
-      font-size: 4rem;
-      line-height: 3.5rem;
-    }
-
-    .masthead-subheading {
-      font-size: 1.5rem;
+    .header-text {
+      .masthead-heading {
+        font-size: 1.5rem !important;
+      }
+      .masthead-subheading {
+        font-size: 2rem !important;
+      }
     }
   }
 }
