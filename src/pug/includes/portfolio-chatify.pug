@@ -20,10 +20,9 @@
                             while srcs <= 23
                                 img.img-fluid.rounded.mb-5(src='assets/img/portfolio/chatify/'+(srcs++)+'.png',loading='lazy',alt='chatify-case-'+srcs)
                             // Portfolio Modal - Text
-                            p.mb-4
-                                | Chatify: Conversational E-Commerce.
-                            a.btn.btn-primary(href='https://chatify.hypermyper.com' target='__blank')
-                                | Site
+                            include contact.pug
+                            //- a.btn.btn-primary(href='https://chatify.hypermyper.com' target='__blank')
+                            //-     | Site
                             button.btn.btn-secondary(data-bs-dismiss='modal')
                                 i.fas.fa-xmark.fa-fw
                                 | Close Window

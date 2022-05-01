@@ -20,10 +20,9 @@
                             while srcs <= 24
                                 img.img-fluid.rounded.mb-5(src='assets/img/portfolio/shootshot/'+(srcs++)+'.png', alt='shootshot-case-'+srcs)
                             // Portfolio Modal - Text
-                            p.mb-4
-                                | ShootShot: Transparency Challenge: Transparency is all that matters in a robust relationship.
-                            a.btn.btn-primary(href='https://shootshot.hypermyper.com' target='__blank')
-                                | Site
+                            include contact.pug
+                            //- a.btn.btn-primary(href='https://shootshot.hypermyper.com' target='__blank')
+                            //-     | Site
                             button.btn.btn-secondary(data-bs-dismiss='modal')
                                 i.fas.fa-xmark.fa-fw
                                 | Close Window

@@ -19,7 +19,7 @@ html(lang='en')
         // Favicon
         link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
 
-        script(src='https://use.fontawesome.com/releases/v6.1.0/js/all.js', crossorigin='anonymous')
+        script(src='https://use.fontawesome.com/releases/v6.1.1/js/all.js', crossorigin='anonymous')
 
         // Google fonts
         link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
@@ -55,28 +55,36 @@ html(lang='en')
                         // Masthead Heading
                         h1.masthead-heading
                             | 👋 Hello, I'm 
-                            a(href='assets/MozhdehBarziCV.pdf' target='__blank') Mozhdeh Barzi
-                        p.masthead-subheading I find the solution that lies in the problem
+                            a(href='assets/MozhdehBarziCV.pdf' target='__blank')
+                                b Mozhdeh Barzi
+                            | .
+                        p.masthead-subheading
+                            | I experience the problem,
+                            br
+                            del find
+                            |  
+                            i design
+                            |  the solution that lies in it.
 
         // Portfolio Section
         section#portfolio.page-section.portfolio
             .container
                 // Portfolio Section Heading
-                h2.page-section-heading.text-center.text-secondary.mb-0 Work
+                h2.page-section-heading.text-center.text-secondary.mb-0 Selected Works
                 // Icon Divider
                 .divider-custom
                     .divider-custom-line
                     .divider-custom-icon
-                        i.fas.fa-star
+                        i.fas.fa-microscope
                     .divider-custom-line
                 // Portfolio Grid Items
                 .row.justify-content-center
                     each portfolio in ["chatify","shootshot"]
-                        .col-md-6.mb-5
+                        .col-md-12.mb-5
                             .portfolio-item.mx-auto(data-bs-toggle='modal', data-bs-target='#'+portfolio+'Modal')
                                 .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
                                     .portfolio-item-caption-content.text-center.text-white
-                                        i.fas.fa-plus.fa-3x
+                                        | See More
                                 img.img-fluid(src='assets/img/portfolio/'+portfolio+'/cover.png', alt=portfolio+'-cover')
 
         // About Section
@@ -88,7 +96,7 @@ html(lang='en')
                 .divider-custom
                     .divider-custom-line
                     .divider-custom-icon
-                        i.fas.fa-star
+                        i.fas.fa-face-smile-beam
                     .divider-custom-line
                 // About Section Content
                 .row
@@ -99,19 +107,25 @@ html(lang='en')
                             | My journey to UX design has not been the most straightforward, but it has been fulfilling.
                             br
                             br
-                            | After receiving my Master's in 2012, when I moved to Singapore, I got familiar with the UX design field. Soon after, I received an innovation award for the mobile app concept that I've designed for the Institute of Innovations & Entrepreneurship of SMU.
+                            | After receiving my Master's in 2012, when I moved to Singapore, I got familiar with the UX design field. Soon after, I received an innovation award for the mobile app concept that I've designed for the Institute of Innovations & Entrepreneurship of 
+                            a(href='https://iie.smu.edu.sg/', target='__blank') SMU
+                            |.
                             br
                             br
                             | Being an empathetic and active listener helped me to find a comprehensive yet agile approach to solve real life challenges/problems, which led me to become a Product Designer and create better experiences for people.
                     .col-lg-4.me-auto
                         p.lead
-                            | +5 years experience as a UX generalist focusing on human-centered design process to produce a user-focused MVP.
+                            | I'm a self thought designer with +5 years experience as a UX generalist focusing on human-centered design process to produce a user-focused MVP.
                             br
                             br
-                            | Expert-level proficiency with major designing tools such as Figma, Adobe XD, Sketch, Adobe Photoshop and illustrator.
+                            | I have learnt theories of UX/UI design through 
+                            a(href='https://en.wikipedia.org/wiki/Massive_open_online_course',target='__blank') MOOC
+                            |, reading articles and applying these to real-world projects. Expert-level proficiency with major designing tools such as Figma, Adobe XD, Sketch, Adobe Photoshop and illustrator.
                             br
                             br
-                            | Founding member of the ShootShot mobile app which was designed and developed based on a patented algorithm to eliminate friendliness bias in communications.
+                            | Founding member of the ShootShot mobile app which was designed and developed based on a 
+                            a(href='https://patents.google.com/patent/US9923846B2/en',target='__blank') patented
+                            |  algorithm to eliminate friendliness bias in communications.
                 // About Section Button
                 .text-center.mt-4
                     a.btn.btn-xl.btn-outline-dark(href='assets/MozhdehBarziCV.pdf' target='__blank')
@@ -127,19 +141,12 @@ html(lang='en')
                         p.lead.mb-0
                             | Japan, Tokyo
                     // Footer Social Icons
-                    .col-lg-4.mb-5.mb-lg-0
-                        h4.text-uppercase.mb-4 Around the Web
-                        a.btn.btn-outline-light.btn-social.mx-1(href='https://www.linkedin.com/in/barzi/')
-                            i.fab.fa-fw.fa-linkedin-in
-                        a.btn.btn-outline-light.btn-social.mx-1(href='https://www.behance.net/mbarzi')
-                            i.fab.fa-fw.fa-behance
-                        a.btn.btn-outline-light.btn-social.mx-1(href='https://dribbble.com/m-barzi')
-                            i.fab.fa-fw.fa-dribbble
-                        a.btn.btn-outline-light.btn-social.mx-1(href='https://www.instagram.com/mozhdehbarzi')
-                            i.fab.fa-fw.fa-instagram
+                    .col-lg-4
+                        include includes/contact.pug
+                        
 
         // Copyright Section
-        div.copyright.bg-primary.py-4.text-center.text-white
+        div.copyright.bg-primary.text-center.text-white
             .container
                 small Copyright &copy; Mozhdeh Barzi 2022
 
@@ -153,9 +160,4 @@ html(lang='en')
         // Core theme JS
         script(src='js/scripts.js')
 
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        // * *                               SB Forms JS                               * *
-        // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-        script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')
+        //- script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')

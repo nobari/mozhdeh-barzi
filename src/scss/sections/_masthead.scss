@@ -26,12 +26,20 @@
         font-weight: normal;
         a {
           color: inherit;
-          text-underline-offset: 2px;
+          // text-underline-offset: 2px;
+          text-decoration: none;
         }
       }
       .masthead-subheading {
         font-size: 1.5rem;
         font-weight: bold;
+        del {
+          text-decoration-color: var(--bs-yellow);
+          text-decoration-style: double;
+        }
+        i {
+          color: var(--bs-yellow);
+        }
       }
     }
   }
@@ -53,12 +61,11 @@
 
 .avatar-div {
   margin: auto;
-  padding: 2rem 1rem 3rem;
   text-align: center;
   img {
-    border-radius: 50%;
-    width: 15rem;
-    height: 15rem;
+    max-width: 100%;
+    max-height: 400px;
+    padding-bottom: 10px;
   }
 }
 @include media-breakpoint-up(sm) {
