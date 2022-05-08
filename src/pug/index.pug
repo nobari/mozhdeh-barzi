@@ -1,11 +1,11 @@
 doctype html
 html(lang='en')
-
+- var portfolios={"chatify":[25], "shootshot":[26], "innoversity":[5,0,"1.gif"], "connect":[3], "mysterybox":[5], "ezpay":[4]}
     head
 
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content='')
+        meta(name='description', content='Mozhdeh Barzi personal website')
         meta(name='author', content='Mozhdeh Barzi')
         meta(rel="apple-touch-startup-image", href="assets/img/logo.png")
         meta(rel="apple-touch-icon", href="assets/img/logo.png")
@@ -78,14 +78,20 @@ html(lang='en')
                         i.fas.fa-microscope
                     .divider-custom-line
                 // Portfolio Grid Items
-                .row.justify-content-center
-                    each portfolio in ["chatify","shootshot"]
-                        .col-md-12.mb-5
-                            .portfolio-item.mx-auto(data-bs-toggle='modal', data-bs-target='#'+portfolio+'Modal')
-                                .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
-                                    .portfolio-item-caption-content.text-center.text-white
-                                        | See More
-                                img.img-fluid(src='assets/img/portfolio/'+portfolio+'/cover.png', alt=portfolio+'-cover')
+                each num, portfolio in portfolios
+                    .row.justify-content-center.mb-4
+                        .portfolio-item.mx-auto(data-bs-toggle='modal', data-bs-target='#'+portfolio+'Modal')
+                            .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+                                .portfolio-item-caption-content.text-center.text-white
+                                    | #{portfolio}
+                            .row.mb-2
+                                h2 #{portfolio}
+                                .col-8
+                                    img.img-fluid(src='assets/img/portfolio/'+portfolio+"/"+(num[2] || 'cover.png'), alt=portfolio+'-cover')
+                                .col-4
+                                    img.img-fluid(src='assets/img/portfolio/'+portfolio+'/1.png', alt=portfolio+'-1')
+                                    img.img-fluid(src='assets/img/portfolio/'+portfolio+'/2.png', alt=portfolio+'-2')
+                                    img.img-fluid(src='assets/img/portfolio/'+portfolio+'/3.png', alt=portfolio+'-3')
 
         // About Section
         section#about.page-section
@@ -151,13 +157,14 @@ html(lang='en')
                 small Copyright &copy; Mozhdeh Barzi 2022
 
         // Portfolio Modals
-        include includes/portfolio-chatify.pug
-        include includes/portfolio-shootshot.pug
-
+        include includes/portfolio.pug
+        each num, portfolio in portfolios
+            +portfolio(portfolio,num)
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js')
 
         // Core theme JS
+        script var portfolios = !{JSON.stringify(portfolios)};
         script(src='js/scripts.js')
 
         //- script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')

@@ -1,9 +1,27 @@
 //
 // Scripts
 // 
-
 window.addEventListener('DOMContentLoaded', event => {
-
+    let hash = window.location.hash || window.location.search;
+    if (hash?.length) {
+        hash = hash.substring(1);
+        if (Object.keys(portfolios).includes(hash)) {
+            console.log("openning:", hash);
+            const modal = document.body.querySelector(`#${hash}Modal`);
+            if (modal) {
+                const myModal = new bootstrap.Modal(modal)
+                if (myModal) myModal.toggle();
+            }
+        }
+    }
+    document.querySelectorAll(".portfolio-modal").forEach(myModal => {
+        myModal.addEventListener('show.bs.modal', function () {
+            window.history.pushState('', '', '?' + myModal.getAttribute("data-name"));
+        })
+        myModal.addEventListener('hide.bs.modal', function () {
+            window.history.pushState('', '', '/');
+        })
+    })
     // Navbar shrink function
     var navbarShrink = function () {
 
