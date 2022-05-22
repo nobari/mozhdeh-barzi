@@ -2,7 +2,6 @@
 // Portfolio
 //
 
-
 .portfolio {
   .portfolio-item {
     // border: 1px solid var(--bs-dark);
@@ -46,6 +45,20 @@
 
 // Styling for the portfolio modals
 .portfolio-modal {
+  .cover-container {
+    position: relative;
+    .portfolio-item-over {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: $transition-base;
+      background-color: fade-out($primary, 0.1);
+      .portfolio-item-over-content {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+      }
+    }
+  }
   .btn-close {
     color: $primary;
     font-size: 2rem;

@@ -76,3 +76,30 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+const apiUrl = "https://us-central1-mozhiweb.cloudfunctions.net/checkAccess";
+async function checkAccess(e) {
+    const form = e.parentElement;// document.querySelector(".password-form");
+    console.log("checkAccess:", form.id);
+    let query = [];
+    let valid = true;
+    form.querySelectorAll("input").forEach(i => {
+        if (i.value?.length) {
+            i.parentElement.querySelector(".invalid").setAttribute("hidden", true);
+            query.push(`${i.id}=${i.value}`)
+        } else {
+            i.parentElement.querySelector(".invalid").removeAttribute("hidden");
+            valid = false;
+        }
+    })
+    console.log("checkAccess:submit:", query);
+    if (valid) {
+        query.unshift(`docId=${form.id}`);
+        try {
+            await fetch(`${apiUrl}/?${query.join("&")}`);
+        } catch (e) {
+            window.alert("invalid password");
+        }
+    }
+    // form.querySelectorAll(".invalid").forEach(f => f.removeAttribute("hidden"));
+}
