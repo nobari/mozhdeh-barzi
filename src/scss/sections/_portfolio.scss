@@ -11,14 +11,19 @@
     max-width: min(90%, 1000px);
     border-radius: $border-radius;
     overflow: hidden;
-
+    &.no-click {
+      cursor: default;
+      .portfolio-item-caption {
+        background-color: fade-out($primary, 0.05) !important;
+      }
+    }
     .portfolio-item-caption {
       position: absolute;
       top: 0;
       left: 0;
       transition: $transition-base;
       opacity: 0;
-      background-color: fade-out($primary, 0.1);
+      background-color: fade-out($primary, 0.4);
 
       &:hover {
         opacity: 1;
@@ -26,7 +31,7 @@
 
       .portfolio-item-caption-content {
         font-size: 2.5rem;
-        text-transform: uppercase;
+        text-transform: capitalize;
       }
     }
     h2 {

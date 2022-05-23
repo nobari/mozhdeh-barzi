@@ -9,10 +9,8 @@ mixin portfolioPass(title,num)
                         .row.justify-content-center
                             .col-lg-8
                                 h2.portfolio-modal-title.text-secondary.text-uppercase.mb-3 #{title}
-                                h3.text-center.text-warning.mb-3
-                                    i.fas.fa-lock.text-warning
-                                    | Password Protected
-                                    i.fas.fa-lock.text-warning
+                                h3.text-center.mb-3
+                                    i.fas.fa-lock.text-primary
                                 // Password Section Form
                                 .row.justify-content-center.mb-3
                                     .col-lg-8.col-xl-7
@@ -47,19 +45,3 @@ mixin portfolioPass(title,num)
 
                                             // Submit Button
                                             button#submitButton.btn.btn-primary.btn-xl(type='button',onclick='checkAccess(this)') Check
-                                .divider-custom
-                                    .divider-custom-line
-                                    .divider-custom-icon
-                                        i.fas.fa-star
-                                    .divider-custom-line
-                                .cover-container.mb-5
-                                    img.img-fluid.rounded(src='assets/img/portfolio/'+title+"/"+(num[3] || '/cover.png'), alt=title+'-cover')
-                                    .portfolio-item-over.d-flex.align-items-center.justify-content-center.h-100.w-100
-                                        .portfolio-item-over-content.text-center.text-white
-                                            i.fas.fa-lock.text-warning
-                                            | Locked
-                                            i.fas.fa-lock.text-warning
-                                include contact.pug
-                                button.btn.btn-secondary(data-bs-dismiss='modal')
-                                    i.fas.fa-xmark.fa-fw
-                                    | Close Window

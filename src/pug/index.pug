@@ -1,6 +1,7 @@
 doctype html
 html(lang='en')
-- var portfolios={"chatify":[false,25], "shootshot":[false,26],"mysterybox":[true,5],"innoversity":[true,5,0,"1.gif"], "connect":[false,3], "ezpay":[false,4]}
+- var portfoliosSoon={"shopper":true}
+- var portfolios={"chatify":[false,17], "shootshot":[false,14],"mysterybox":[true]}
     head
 
         meta(charset='utf-8')
@@ -78,24 +79,36 @@ html(lang='en')
                         i.fas.fa-microscope
                     .divider-custom-line
                 // Portfolio Grid Items
+                each num, portfolio in portfoliosSoon
+                    .row.justify-content-center.mb-4
+                            .portfolio-item.mx-auto.no-click
+                                .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+                                    .portfolio-item-caption-content.text-center.text-white
+                                        | #{portfolio}
+                                        br
+                                        | Coming soon
+                                .row.mb-2
+                                    h2 #{portfolio}
+                                    .col
+                                        img.img-fluid(src='assets/img/portfolio/'+portfolio+"/"+(num[3] || 'cover.png'), alt=portfolio+'-cover')
                 each num, portfolio in portfolios
                     .row.justify-content-center.mb-4
                         .portfolio-item.mx-auto(data-bs-toggle='modal', data-bs-target='#'+portfolio+'Modal')
                             .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
                                 .portfolio-item-caption-content.text-center.text-white
-                                    if num[0]
-                                        i.fas.fa-lock.text-warning
                                     | #{portfolio}
-                                    if num[0]
-                                        i.fas.fa-lock.text-warning
                             .row.mb-2
                                 h2 #{portfolio}
-                                .col-8
-                                    img.img-fluid(src='assets/img/portfolio/'+portfolio+"/"+(num[3] || 'cover.png'), alt=portfolio+'-cover')
-                                .col-4
-                                    img.img-fluid(src='assets/img/portfolio/'+portfolio+'/1.png', alt=portfolio+'-1')
-                                    img.img-fluid(src='assets/img/portfolio/'+portfolio+'/2.png', alt=portfolio+'-2')
-                                    img.img-fluid(src='assets/img/portfolio/'+portfolio+'/3.png', alt=portfolio+'-3')
+                                if num[0]
+                                    .col
+                                        img.img-fluid(src='assets/img/portfolio/'+portfolio+"/"+(num[3] || 'cover.png'), alt=portfolio+'-cover')
+                                else
+                                    .col-8
+                                        img.img-fluid(src='assets/img/portfolio/'+portfolio+"/"+(num[3] || 'cover.png'), alt=portfolio+'-cover')
+                                    .col-4
+                                        img.img-fluid(src='assets/img/portfolio/'+portfolio+'/1.png', alt=portfolio+'-1')
+                                        img.img-fluid(src='assets/img/portfolio/'+portfolio+'/2.png', alt=portfolio+'-2')
+                                        img.img-fluid(src='assets/img/portfolio/'+portfolio+'/3.png', alt=portfolio+'-3')
 
         // About Section
         section#about.page-section
